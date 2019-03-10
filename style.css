@@ -1,0 +1,235 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: linear-gradient(#3573ff, #3099e8);
+  color: #161e2e;
+  background-attachment: fixed;
+  overscroll-behavior: none;
+  font-family: sans-serif;
+  font-size: 0.8em;
+}
+
+#top {
+  background-color: transparent;
+  color: #fff;
+  width: 100vw;
+  text-align: center;
+}
+
+h1 {
+  margin: 0 auto;
+  padding: 10px;
+  font-size: 2.5em;
+}
+h2 {
+  color: #002c4a;
+}
+#open_form {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 100px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #35ffb1;
+  border: none;
+  box-shadow: 4px 4px rgba(0, 0, 0, 0.2);
+  transition: 0.2s;
+  cursor: pointer;
+}
+#open_form:hover {
+  background-color: #30e8d5;
+  border: none;
+  box-shadow: none;
+}
+
+/****************************************************************/
+/****************************************************************/
+/* TASK-SECTION */
+
+article {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: auto auto auto 40px;
+  border: none;
+  background-color: white;
+  width: 300px;
+  padding: 10px;
+  margin: 10px auto;
+}
+
+#title {
+  grid-area: 1/1/3/2;
+  margin: auto 0;
+}
+#priority {
+  grid-area: 1/2/1/3;
+  border: none;
+  text-align: center;
+  height: 25px;
+  padding: 5px;
+  margin: 5px 0;
+  border: none;
+}
+#description {
+  grid-area: 3/1/3/3;
+}
+#date {
+  grid-area: 2/2/2/3;
+  padding: 0;
+  margin: 3px 0;
+  text-align: center;
+  color: gray;
+}
+#delete {
+  grid-area: 4/1/4/3;
+  margin: 3px;
+  width: 100px;
+  padding: 8px;
+  border-radius: 5px;
+  background-color: #eaf4ff;
+  box-shadow: 2px 2px rgba(0, 0, 0, 0.2);
+  border: none;
+  cursor: pointer;
+}
+#delete:hover {
+  background-color: #d0d9e3;
+  border: none;
+  box-shadow: none;
+}
+
+/****************************************************************/
+/****************************************************************/
+/* FORM - generalt */
+
+form {
+  display: none;
+  margin: 10px auto;
+  padding: 10px 20px;
+  grid-template-columns: 1fr;
+  width: 300px;
+  background-color: #eaf4ff;
+}
+
+label {
+  margin-top: 10px;
+}
+
+input,
+textarea,
+select {
+  border: 1px solid #d5e3e8;
+  box-shadow: 2px 2px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+textarea {
+  max-width: 260px;
+  min-width: 260px;
+}
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border: 1px solid #3099e8;
+}
+#buttons {
+  display: relative;
+  text-align: center;
+}
+
+input[type="submit"] {
+  margin: 10px;
+  width: 100px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #35ffb1;
+  border: none;
+  box-shadow: 2px 2px rgba(0, 0, 0, 0.5);
+  transition: 0.2s;
+  cursor: pointer;
+}
+input[type="submit"]:hover {
+  background-color: #30e8d5;
+  border: none;
+  box-shadow: none;
+}
+
+#close_form {
+  margin: 10px;
+  width: 100px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: transparent;
+  border: 1px solid #a4b2b5;
+  color: #a4b2b5;
+  cursor: pointer;
+}
+.obs {
+  color: #ff6666;
+}
+/****************************************************************/
+/****************************************************************/
+/* PRIORITY */
+
+.must {
+  background-color: #ff6666;
+}
+.should {
+  background-color: #ffc266;
+}
+.could {
+  background-color: #ffff66;
+}
+
+/****************************************************************/
+/****************************************************************/
+/* VALIDATION */
+
+.check_validation:invalid + span::after {
+  content: "Please add a title";
+  font-family: sans-serif;
+  font-size: 0.8em;
+  color: rgb(77, 0, 0);
+}
+.check_validation_priority:invalid + span::after {
+  content: "Please choose a priority";
+  font-family: sans-serif;
+  font-size: 0.8em;
+  color: rgb(77, 0, 0);
+}
+
+.check_validation:invalid,
+.check_validation_priority:invalid {
+  border: 1px solid red;
+  background-color: rgb(235, 225, 225);
+}
+
+.check_validation:valid,
+.check_validation_priority:valid {
+  border: 1px solid green;
+  background-color: rgb(192, 233, 192);
+}
+
+/****************************************************************/
+/****************************************************************/
+/* DISPLAY-SIZE */
+@media only screen and (min-width: 600px) {
+  section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  #open_form {
+    right: 30px;
+  }
+}
+
+@media only screen and (min-width: 980px) {
+  section {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}

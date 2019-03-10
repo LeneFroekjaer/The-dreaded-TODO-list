@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>To Do list</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="top">
+      <h1>To Do list</h1>
+      <button id="open_form">Add new task</button>
+    </div>
+    <form autocomplete="off">
+      <h2>Add new task</h2>
+      <label for="new_title">Title <span class="obs">*</span></label>
+      <input type="text" name="new_title" required /><span></span>
+      <label for="new_description">Description</label>
+      <textarea name="new_description" cols="30" rows="10"></textarea>
+      <span></span>
+      <label for="new_date">Due to</label>
+      <input type="text" name="new_date" placeholder="Example: 23/06/2019" />
+      <label for="new_priority">Priority <span class="obs">*</span></label>
+      <select name="new_priority" required>
+        <option value="">None</option>
+        <option value="must">Must</option>
+        <option value="should">Should</option>
+        <option value="could">Could</option>
+      </select>
+      <span></span>
+      <div id="buttons">
+        <button id="close_form">chancel</button>
+        <input type="submit" name="submit" value="Add task" />
+      </div>
+    </form>
+
+    <section></section>
+    <template>
+      <article>
+        <h2 id="title"></h2>
+        <p id="description"></p>
+        <p id="date"></p>
+        <p id="priority"></p>
+        <button id="delete">Delete task</button>
+      </article>
+    </template>
+
+    <script src="todo.js"></script>
+  </body>
+</html>
