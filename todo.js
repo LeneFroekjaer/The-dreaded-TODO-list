@@ -1,8 +1,8 @@
 "use strict";
 
-// Key to json (x-apikey): 5c8179f4cac6621685acbc9a
-// JSON homepage: https://todolist-77b4.restdb.io/home/
-// JSON file: https://todolist-77b4.restdb.io/rest/todo
+// Key to json (x-apikey): 5c8179f4cac6621685acbc9a => 5ca0f5bfdf5d634f46ecb0ca
+// JSON homepage: https://todolist-77b4.restdb.io/home/ => https://keaprojects-9fe5.restdb.io/home/
+// JSON file: https://todolist-77b4.restdb.io/rest/todo => https://keaprojects-9fe5.restdb.io/rest/todo
 
 window.addEventListener("DOMContentLoaded", get);
 const form = document.querySelector("form");
@@ -34,11 +34,11 @@ function closeForm() {
 // GET
 
 function get() {
-  fetch("https://todolist-77b4.restdb.io/rest/todo", {
+  fetch("https://keaprojects-9fe5.restdb.io/rest/todo", {
     method: "get",
     headers: {
       "Content-Type": "application/json; charset=utf-8",
-      "x-apikey": "5c8179f4cac6621685acbc9a",
+      "x-apikey": "5ca0f5bfdf5d634f46ecb0ca",
       "cache-control": "no-cache"
     }
   })
@@ -75,11 +75,11 @@ function showTask(task) {
 
 function post(data) {
   const postData = JSON.stringify(data);
-  fetch("https://todolist-77b4.restdb.io/rest/todo", {
+  fetch("https://keaprojects-9fe5.restdb.io/rest/todo", {
     method: "post",
     headers: {
       "Content-Type": "application/json; charset=utf-8",
-      "x-apikey": "5c8179f4cac6621685acbc9a",
+      "x-apikey": "5ca0f5bfdf5d634f46ecb0ca",
       "cache-control": "no-cache"
     },
     body: postData
@@ -114,11 +114,11 @@ form.addEventListener("submit", e => {
 // DELETE
 
 function deleteTask(id) {
-  fetch("https://todolist-77b4.restdb.io/rest/todo/" + id, {
+  fetch("https://keaprojects-9fe5.restdb.io/rest/todo" + id, {
     method: "delete",
     headers: {
       "Content-Type": "application/json; charset=utf-8",
-      "x-apikey": "5c8179f4cac6621685acbc9a",
+      "x-apikey": "5ca0f5bfdf5d634f46ecb0ca",
       "cache-control": "no-cache"
     }
   })
